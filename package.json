@@ -16,6 +16,7 @@
     "evercookie":"~0.3.0",
     "node-uuid":"~1.4.7",
     "MD5": "*",
-    "fingerprintjs2":"*"
+    "fingerprintjs2":"*",
+    "ejs":"~1.0.0"
   }
 }
