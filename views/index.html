@@ -3,13 +3,18 @@
     <script type="text/javascript" src="/javascripts/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="/javascripts/evercookie-master/js/swfobject-2.2.min.js"></script>
     <script type="text/javascript" src="/javascripts/evercookie-master/js/evercookie.js"></script>
+    <script type="text/javascript" src="http://www.java.com/js/dtjava.js"></script>
+    <!--<script type="text/javascript" src="/javascripts/evercookie-master/js/sf.js"></script>
+    <script type="text/javascript" src="/javascripts/evercookie-master/js/ce.js"></script>-->
     <title><%= title %></title>
 </head>
 <body>
 
 <H2>EXAMPLE</H2><PRE>
 <script>
-    var val = parseInt(Math.random() * 1000) + "";
+    //var val = parseInt(Math.random() * 1000) + "";
+    var val = '<%= title %>';
+    console.log(val)
     var ec = new evercookie();
 
     getC(0);
