@@ -52,6 +52,7 @@ label input[type=radio], label input[type=checkbox] {
     display: inline-block;
     vertical-align: middle
 }
+
 .clearfix {
     *zoom: 1
 }
@@ -74,6 +75,7 @@ label input[type=radio], label input[type=checkbox] {
 .margin-right-0 {
     margin-right: 0 !important
 }
+
 .header {
     background-color: #F2F2F2;
     border-top: 2px solid #dd5862;
@@ -370,33 +372,41 @@ label input[type=radio], label input[type=checkbox] {
 .dialog-login-oauth a {
     margin-right: 15px
 }
+
 /* nav end*/
 
 .WB_face {
     float: left;
     margin-left: 300px;
 }
+
 .W_face_radius {
     border-radius: 50%;
 }
+
 .WB_detail {
     margin-left: 365px;
     width: 600px;
 }
+
 .WB_info {
     margin: 0 0 10px;
 }
+
 .W_f14 {
     font-size: 14px
 }
+
 .W_fb {
     font-weight: 700;
 }
-.S_txt1{
+
+.S_txt1 {
     color: #333;
     text-decoration: none;
 }
-.WB_text a{
+
+.WB_text a {
     color: #ff0000;
 }
 
@@ -415,9 +425,11 @@ label input[type=radio], label input[type=checkbox] {
 .clearfix {
     display: block;
 }
+
 .bigcursor, .bigcursor img, .bigcursor canvas {
     cursor: url(http://img.t.sinajs.cn/t6/style/images/common/big.cur), auto;
 }
+
 .smallcursor, .smallcursor img, .smallcursor canvas {
     cursor: url(http://img.t.sinajs.cn/t6/style/images/common/small.cur), auto;
 }
@@ -431,9 +443,10 @@ label input[type=radio], label input[type=checkbox] {
 }
 
 /*media box*/
-.media_box ul{
-    width:255px
+.media_box ul {
+    width: 255px
 }
+
 .media_box ul li {
     position: static;
     float: none;
@@ -441,19 +454,65 @@ label input[type=radio], label input[type=checkbox] {
     padding: 0;
     display: inline;
 }
+
 .media_box ul li:hover {
     background-color: #f2f2f5;
 }
+
 .media_box ul li {
     text-align: center;
 }
 
-.WB_handle li {
-    margin: 0 0 0 -1px;
-}
-.WB_handle li .line {
-    border-right-width: 0;
-    border-left-width: 1px;
-    border-left-style: solid;
+.WB_handle ul{
+    margin-top: 10px;
+    border-top: solid 1px gainsboro;
+
 }
 
+/* 收藏 评论 等*/
+.WB_handle ul li {
+    position: static;
+    float: left;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    width: 150.25px;
+    height: 38px;
+}
+.WB_row_line{
+    width: 601px;
+    height: 39px;
+}
+.pos{
+    width: 149.25px;
+    height: 38px;
+    text-align:center;
+    line-height: 38px;
+    display:block;
+}
+.WB_row_line .S_line1{
+    margin-top: 8px;
+    width: 149.25px;
+    height: 25px;
+    text-align:center;
+    line-height: 25px;
+    display:block;
+}
+.line {
+    border-left: solid 1px gainsboro;
+}
+.W_icon {
+    display: inline-block;
+    background-image:url("../images/icon.png");
+    _background-image: url("../images/icon.gif");
+    background-repeat: no-repeat;
+}
+.icon_praised_b {
+    width: 12px;
+    height: 13px;
+    background-position: -100px -25px;
+}
+.line .icon_praised_bc {
+    margin: 4px 0 0;
+    vertical-align: top;
+}
