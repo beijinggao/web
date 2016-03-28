@@ -516,3 +516,7 @@ label input[type=radio], label input[type=checkbox] {
     margin: 4px 0 0;
     vertical-align: top;
 }
+
+#qtip-headLoginDialog{
+    visibility:hidden
+}
