@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta property="qc:admins" content="4553322067645776654">
+    <meta name="baidu-site-verification" content="xC1m9aYTgX">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <script type="text/javascript" src="/javascripts/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/evercookie-master/js/swfobject-2.2.min.js"></script>
+    <script type="text/javascript" src="/javascripts/evercookie-master/js/evercookie.js"></script>
+    <script type="text/javascript" src="/javascripts/luoo.js"></script>
+    <script src="/javascripts/jquery-1.11.0.min.js"></script>
+    <title><%=title%></title>
+</head>
+<body>
+<!-- header start -->
+<div class="header">
+        <!-- logged-in-wrapper -->
+        <div class="logged-in-wrapper" id="loggedInWrapper" style="display: none;"></div>
+        <!-- logged-in-wrapper end-->
+
+        <div class="logged-out-wrapper" id="loggedOutWrapper" data-remote="./dialog.html"
+             data-tipid="headLoginDialog" data-width="235" data-show="mouseenter" data-adjusty="-12"
+             style="display: block;" data-hasqtip="3" aria-describedby="qtip-3">
+            <a href="javascript:;" rel="nofollow" class="ln-top-login"> 注册/登录 </a>
+
+        </div>
+        <!-- logged-out-wrapper -->
+</div>
+
+<script src="/javascripts/jquery.artDialog.js"></script>
+<script src="/javascripts/jquery.qtip.min.js"></script>
+<script src="/javascripts/jquery.cookie.js"></script>
+<script src="/javascripts/qrcode.min.js"></script>
+
+<div id="qtip-headLoginDialog" class="qtip qtip-default qtip-luoo qtip-pos-tc" tracking="false" role="alert" aria-live="polite" aria-atomic="false" aria-describedby="qtip-headLoginDialog-content" aria-hidden="true" data-qtip-id="headLoginDialog" style="width: 235px; z-index: 15001;"><div class="qtip-tip" style="border: 0px !important; width: 8px; height: 8px; line-height: 8px; left: 50%; margin-left: -4px; top: -8px; background-color: transparent !important;"><canvas width="8" height="8" style="border: 0px !important; width: 8px; height: 8px; background-color: transparent !important;"></canvas></div><div class="qtip-content" id="qtip-headLoginDialog-content" aria-atomic="true"><div class="dialog-passport">
+    <div class="dialog-head">
+		<span class="title">
+			登录
+		</span>
+        <a href="javascript:;" rel="nofollow" class="ln-reg btn-dialog-register" data-tipid="registerDialog" data-remote="http://www.luoo.net/register/dialog" data-width="235" data-hasqtip="registerDialog" aria-describedby="qtip-registerDialog">
+            注册
+        </a>
+        <span class="fright">没有账号？</span>
+    </div>
+    <form class="form-ajax" action="http://www.luoo.net/login/" callback="login_cback">
+        <div class="inline-input">
+            <span class="label">邮箱</span>
+            <input type="text" class="input-passport" name="name" required="">
+        </div>
+        <div class="inline-input">
+            <span class="label">密码</span>
+            <input type="password" class="input-passport" name="password" required="">
+        </div>
+        <div class="btn-wrapper">
+            <a href="javascript:;" class="btn btn-positive btn-login-submit rounded" rel="nofollow">
+                登录
+            </a>
+			<span class="btn btn-positive btn-login-msg rounded" style="display:none;">
+				提示
+			</span>
+        </div>
+        <div class="clearfix">
+            <label><input type="checkbox" name="remember"> 下次自动登录</label>
+            <a href="http://www.luoo.net/login/forgot" rel="nofollow" class="ln-resetpwd">找回密码</a>
+        </div>
+    </form>
+</div>
+    <div class="dialog-login-oauth">
+        <div class="platforms">
+            <a href="http://www.luoo.net/login/oauth/site/weibo" class="icon-open-weibo" rel="nofollow"></a>
+            <a href="http://www.luoo.net/login/oauth/site/douban" class="icon-open-douban" rel="nofollow">
+            </a>
+            <a href="http://www.luoo.net/login/oauth/site/qq" class="icon-open-qq" rel="nofollow"></a>
+        </div>
+    </div></div></div>
+
+<!--
+<div id="qtip-registerDialog" class="qtip qtip-default qtip-luoo qtip-pos-tc" tracking="false" role="alert" aria-live="polite" aria-atomic="false" aria-describedby="qtip-registerDialog-content" aria-hidden="true" data-qtip-id="registerDialog" style="width: 235px; z-index: 15002;"><div class="qtip-tip" style="border: 0px !important; width: 8px; height: 8px; line-height: 8px; left: 50%; margin-left: -4px; top: -8px; background-color: transparent !important;"><canvas width="8" height="8" style="border: 0px !important; width: 8px; height: 8px; background-color: transparent !important;"></canvas></div><div class="qtip-content" id="qtip-registerDialog-content" aria-atomic="true">
+    <div class="dialog-passport">
+        <div class="dialog-head">
+		<span class="title">
+			注册
+            <!--<img style="display: none;" width="1" height="1" src="http://www.luoo.net/register/vild_shit"/>-->
+<!--</span>
+    <a href="javascript:;" class="ln-login btn-dialog-login" data-tipid="loginDialog" data-remote="http://www.luoo.net/login/dialog" data-width="235">
+        返回登录
+    </a>
+</div>
+<form class="form-ajax" action="http://www.luoo.net/register/" callback="register_cback">
+    <div class="inline-input">
+        <span class="label">昵称</span>
+        <input type="text" name="name" class="input-passport" autocomplete="off" placeholder="14位以内中英文数字" required="">
+        <input type="hidden" name="_h" value="4ec307cad9fdd99782cbe80d40a2d8ee">
+
+    </div>
+    <div class="inline-input">
+        <span class="label">邮箱</span>
+        <input type="text" name="email" class="input-passport" autocomplete="off" required="" placeholder="您的常用邮箱">
+    </div>
+    <div class="inline-input">
+        <span class="label">密码</span>
+        <input type="password" class="input-passport" name="password" autocomplete="off" required="" placeholder="6-16个字符">
+    </div>
+
+    <div class="inline-input">
+        <span class="label">验证码</span>
+        <input type="text" name="code" class="input-sort" autocomplete="off" required="">
+        <img src="./落网 - 独立音乐推荐_files/captcha" data-src="http://www.luoo.net/data/captcha" alt="验证码" class="verify">
+    </div>
+
+    <div class="rule-wrapper">
+        <input type="checkbox" name="rule" checked="" required="">
+        同意落网的
+        <a target="_blank" href="http://www.luoo.net/term/">《使用协议》</a>
+    </div>
+    <div>
+        <a href="javascript:;" class="btn btn-positive btn-register-submit rounded" rel="nofollow">
+            注册
+        </a>
+    <span class="btn btn-positive btn-register-msg rounded" style="display:none;">
+        提示
+    </span>
+    </div>
+</form>
+</div></div></div> -->
+</body>
+</html>
+
