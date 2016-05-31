@@ -12,7 +12,7 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/light'));
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 
@@ -40,6 +40,7 @@ app.use(evercookie.backend({
 }));*/
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views/light')));
 
 app.use('/', routes);
 app.use('/users', users);
