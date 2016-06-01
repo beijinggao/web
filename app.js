@@ -40,7 +40,7 @@ app.use(evercookie.backend({
 }));*/
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'views/light')));
+//app.use(express.static(path.join(__dirname, 'views/light')));
 
 app.use('/', routes);
 app.use('/users', users);

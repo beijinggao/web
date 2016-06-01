@@ -18,6 +18,11 @@
     "MD5": "*",
     "fingerprintjs2":"*",
     "ejs":"~1.0.0",
-    "flash-cookies":"~2.2.1"
+    "flash-cookies":"~2.2.1",
+    "jquery":"*",
+    "request":"~2.72.0",
+    "jsdom":"*",
+    "xmlhttprequest":"*",
+    "arraylist":"*"
   }
 }
