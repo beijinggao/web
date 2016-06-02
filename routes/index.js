@@ -23,6 +23,7 @@ router.get('/blog.html', function(req, res, next) {
             $('.content').each(function(index,value){
                 data.set(index,$(value).text());
             });
+            console.log(data);
             res.render('blog', {title: data});
         }
     });
