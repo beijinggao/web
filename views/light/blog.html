@@ -25,6 +25,8 @@
     <script type="text/javascript" src="style/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="style/js/jquery.superbgimage.min.js"></script>
     <script type="text/javascript" src="style/js/jquery.slickforms.js"></script>
+    <script type="text/javascript" src="style/js/jquery.paging.min.js"></script>
+
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.forms').dcSlickForms();
@@ -47,9 +49,25 @@
         });
 
         $(function () {
-            $(".page").click(function(){
-                $(".page").addClass('current');
+            /*$(".page").click(function(){
+                $(this).addClass('current');
             });
+            PageClick = function(pageclickednumber) {
+                $(".page-navi").paging({ pagenumber: pageclickednumber, pagecount: 35, buttonClickCallback: PageClick });
+                $(".page-curr").html("Page "+pageclickednumber+" of 35");
+            }
+            $(".page-navi").paging({ pagenumber: 1, pagecount: 35, buttonClickCallback: PageClick });*/
+
+            $(".page-navi").paging(35, {
+                format: '[< ncnnn! >]',
+                perpage: 5,
+                page: getCookie("current") || 1,
+                onSelect: function (page) {
+                    setCookie("current", page)
+                    console.log(this);
+                }
+            });
+
         });
     </script>
 </head>
@@ -130,14 +148,15 @@
             <div class="content">
                 <!-- Begin Page Navi -->
                 <div class="page-navi">
-                    <p>Page 1 of 35</p>
+                    <p class="page-curr"></p>
+                    <!--<p>Page 1 of 35</p>
                     <ul>
-                        <li><a href="?page=1" class="current">1</a></li>
-                        <li><a href="?page=2" class="page">2</a></li>
-                        <li><a href="?page=3" class="page">3</a></li>
-                        <li><a href="?page=4" class="page">4</a></li>
-                        <li><a href="?page=5" class="page">5</a></li>
-                    </ul>
+                        <li><a href="?page=1" id="page1" class="current">1</a></li>
+                        <li><a href="?page=2" id="page2" class="page">2</a></li>
+                        <li><a href="?page=3" id="page3" class="page">3</a></li>
+                        <li><a href="?page=4" id="page4" class="page">4</a></li>
+                        <li><a href="?page=5" id="page5" class="page">5</a></li>
+                    </ul>-->
                 </div>
                 <!-- End Page Navi -->
             </div>
