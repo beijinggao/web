@@ -13,7 +13,9 @@ router.get('/', function (req, res, next) {
     //res.render('index', {title: 'Express'});
 });
 router.get('/blog.html', function (req, res, next) {
-    var url = "http://www.qiushibaike.com/8hr/page/" + req.query.page + "/?s=4882864";
+    var pager=req.query.page;
+    if(pager ==undefined) pager=1;
+    var url = "http://www.qiushibaike.com/8hr/page/" + pager + "/?s=4882864";
     var data = new ArrayList;
     jsdom.env({
         url: url,
@@ -33,7 +35,15 @@ router.get('/blog.html', function (req, res, next) {
             /*$('.content').each(function (index, value) {
                 data.set(index, $(value).text());
             });*/
-            res.render('blog', {title: data});
+            var pages=[];
+            if(pager>=6){
+                pages[0]=pager-2;
+                pages[1]=pager-1;
+                pages[2]=pager;
+                pages[3]=parseInt(pager)+1;
+                pages[4]=parseInt(pager)+2;
+            }
+            res.render('blog', {title: data,pager:pager,pages:pages});
         }
     });
 });

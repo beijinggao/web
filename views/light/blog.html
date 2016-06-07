@@ -46,28 +46,24 @@
             "<p><%=title[i][0].replace(/\n/g, '') %><a class='more'>Continue Reading →</a></p></div>" +
             "<span class='tags'><a href='#'>Black & White</a>, <a href='#'>Color</a>, <a href='#'>Portfolio</a></span></div>");
             '<% } %>'
-        });
 
-        $(function () {
-            /*$(".page").click(function(){
-                $(this).addClass('current');
-            });
-            PageClick = function(pageclickednumber) {
-                $(".page-navi").paging({ pagenumber: pageclickednumber, pagecount: 35, buttonClickCallback: PageClick });
-                $(".page-curr").html("Page "+pageclickednumber+" of 35");
-            }
-            $(".page-navi").paging({ pagenumber: 1, pagecount: 35, buttonClickCallback: PageClick });*/
-
-            $(".page-navi").paging(35, {
-                format: '[< ncnnn! >]',
-                perpage: 5,
-                page: getCookie("current") || 1,
-                onSelect: function (page) {
-                    setCookie("current", page)
-                    console.log(this);
-                }
-            });
-
+            '<% if(pager >=5) {%>'
+                $('#<%=pager%>').after("<li><a href='?page=<%=parseInt(pager)+1%>' id='<%=parseInt(pager)+1%>' ><%=parseInt(pager)+1%></a></li>"+
+                "<li><a href='?page=<%=parseInt(pager)+2%>' id='<%=parseInt(pager)+1%>' ><%=parseInt(pager)+2%></a></li>");
+            '<%}%>'
+            '<% if(pager >=6) {%>'
+                $(".page-navi ul li").each(function(){
+                    if($(this).index()!=0 && $(this).index()!=1){
+                        $(this).remove();
+                    }
+                });
+                $(".page-navi ul").append("<li><a href='' id='' >...</a></li>");
+                '<% for(var i=0; i<pages.length; i++) { %>'
+                    $(".page-navi ul").append("<li><a href='?page=<%=pages[i]%>' id='<%=pages[i]%>' ><%=pages[i]%></a></li>");
+                '<% } %>'
+                $(".page-navi ul").append("<li><a href='' id='' >...</a></li><li><a href='?page=70' id='70' >70</a></li><li><a href='?page=<%=parseInt(pager)+1%>' id='80'> >></a></li>");
+            '<% } %>'
+            $('#<%=pager %>').addClass('current');
         });
     </script>
 </head>
@@ -148,15 +144,19 @@
             <div class="content">
                 <!-- Begin Page Navi -->
                 <div class="page-navi">
-                    <p class="page-curr"></p>
-                    <!--<p>Page 1 of 35</p>
+                    <!--<p class="page-curr"></p>-->
+                    <p>Page <%=pager%> of 70</p>
                     <ul>
-                        <li><a href="?page=1" id="page1" class="current">1</a></li>
-                        <li><a href="?page=2" id="page2" class="page">2</a></li>
-                        <li><a href="?page=3" id="page3" class="page">3</a></li>
-                        <li><a href="?page=4" id="page4" class="page">4</a></li>
-                        <li><a href="?page=5" id="page5" class="page">5</a></li>
-                    </ul>-->
+                        <li><a href="?page=<%=pager-1%>" id="pre" ><<</a></li>
+                        <li><a href="?page=1" id="1" >1</a></li>
+                        <li><a href="?page=2" id="2" >2</a></li>
+                        <li><a href="?page=3" id="3" >3</a></li>
+                        <li><a href="?page=4" id="4" >4</a></li>
+                        <li><a href="?page=5" id="5" >5</a></li>
+                        <li><a href="" id="" >...</a></li>
+                        <li><a href="?page=70" id="70" >70</a></li>
+                        <li><a href="?page=<%=parseInt(pager)+1%>" id="80" > >></a></li>
+                    </ul>
                 </div>
                 <!-- End Page Navi -->
             </div>
