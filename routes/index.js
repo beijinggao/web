@@ -47,6 +47,11 @@ router.get('/blog.html', function (req, res, next) {
         }
     });
 });
+
+router.get('/portfolio.html', function (req, res, next) {
+    res.render('portfolio');
+});
+
 router.get('/index.html', function (req, res, next) {
     res.render('index', {title: 'aaaaaaaaaaaaaaaaaa'});
     res.send('respond with a resource');
